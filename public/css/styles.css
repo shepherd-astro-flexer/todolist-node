@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/*** TAG SELECTOR ***/
+body {
+  margin: 0;
+  background-image: -webkit-linear-gradient(65deg, #301E67 50%, #5B8FB9 50%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body, button, input, ::placeholder {
+  font-family: montserrat, sans-serif;
+}
+
+h1, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Title */
+.box {
+  box-sizing: border-box;
+  display: flex;
+  width: 350px;
+  
+  padding: 10px;
+}
+
+#title {
+  justify-content: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color:#2F58CD;
+}
+
+/* Form inputs */
+#input-form {
+  border-radius: 0 0 5px 5px;
+}
+
+.item {
+  background-color: #B6EADA;
+}
+
+.todoInput {
+  width: 100%;
+  margin-right: 5px;
+  border: none;
+}
+
+.todoInput, ::placeholder {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.todoInput:focus {
+  outline: none;
+  border-bottom: 4px solid #5B8FB9;
+}
+
+.submitButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #5B8FB9;
+}
+
+#checkbox {
+  margin-right: 20px;
+}
+
+#checkbox:checked+p {
+  text-decoration: line-through;
+}

@@ -4,18 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
   <title>Document</title>
 </head>
 <body>
-  <h1><%= day %></h1>
-  <ul>
-    <% todos.forEach(todo => { %> <!-- 8. Gagamitin natin yung variable sa forEach-->
-        <li><%= todo %></li> <!-- 9. Then i-render natin ang result -->
-    <% }) %> 
-  </ul>
-  <form action="/" method="POST">
-    <input name="newTodo" type="text">
-    <button type="submit">Submit</button> <!-- 1. Kapag kinlick etong button na, titignan nya ang action at method ng form then pupunta ang value sa server-->
-  </form>
+  <main>
+    <div class="box" id="title">
+      <h1><%= day %></h1>
+    </div>
+      <% todos.forEach(todo => { %> <!-- 8. Gagamitin natin yung variable sa forEach-->
+        <form action="/delete" method="POST">
+          <div class="box item">
+            <input onChange="this.form.submit()" type="checkbox" name="checkbox" id="checkbox" value=<%= todo.id %>>
+            <p><%= todo.name %></p> <!-- 9. Then i-render natin ang result -->
+          </div>
+        </form>
+      <% }) %> 
+    <form class="box item" id="input-form" action="/" method="POST">
+      <input placeholder="New Item" class="todoInput" name="newTodo" type="text" required>
+      <button class="submitButton" type="submit">+</button> <!-- 1. Kapag kinlick etong button na, titignan nya ang action at method ng form then pupunta ang value sa server-->
+    </form>
+  </main>
 </body>
 </html>
